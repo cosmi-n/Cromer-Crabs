@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../styles/contactUsPageStyle.css">
+        <title>Cromer Crabs</title>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    </head>
+
+    <body>
+        <div id="navBar">
+            <h1>CROMER CRABS</h1>
+
+            <button id="toggleNav" onclick="toggleNavBar()">&#9776;</button>
+
+            <div id="navLinks">
+                <a href="../../index.html">Home page</a>
+                <a href="membersPage.html">Members</a>
+                <a href="shopPage.html">Shop</a>
+                <a href="mailingProgramPage.html">Mailing program</a>
+            </div>
+        </div>
+
+        <div id="contact_div">
+            <form id="contactForm">
+                <input id="nameInput" type="text" placeholder="Enter your name">
+                <input id="emailInput" type="email" placeholder="Enter your email">
+                <textarea id="messageInput" placeholder="Enter your message"></textarea>
+                <button type="button" onclick="sendMessage()">SEND</button>
+            </form>
+        </div>
+
+        <script>
+            function sendMessage() {
+
+                Swal.fire({
+                    title: 'Message sent!',
+                    text: 'We usually try to respond within 24 hours.',
+                    icon: 'success',
+                    confirmButtonText: 'OK'
+                });
+            }
+
+            function toggleNavBar() {
+                document.getElementById("navLinks").classList.toggle("open");
+            }
+        </script>
+    </body>
+</html>

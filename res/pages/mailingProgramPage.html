@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../styles/mailingProgramPageStyle.css">
+        <title>Cromer Crabs</title>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    </head>
+
+    <body>
+        <div id="navBar">
+            <h1>CROMER CRABS</h1>
+
+            <button id="toggleNav" onclick="toggleNavBar()">&#9776;</button>
+
+            <div id="navLinks">
+                <a href="../../index.html" id="mainPageButton">Home page</a>
+                <a href="membersPage.html" id="membersPageButton">Members</a>
+                <a href="shopPage.html" id="shopButton">Shop</a>
+                <a href="contactUsPage.html" id="contactButton">Contact us</a>
+            </div>
+        </div>
+
+        <div id="mailingProgram_div">
+            <form id="mailingProgramForm">
+                <input id="nameInput" type="text" placeholder="Enter your name">
+                <input id="emailInput" type="email" placeholder="Enter your email">
+                <button type="button" onclick="successAlert()">SIGN UP</button>
+            </form>
+        </div>
+
+        <script>
+            function successAlert() {
+                const name = document.getElementById("nameInput").value.trim();
+                const email = document.getElementById("emailInput").value.trim();
+
+                if (!name || !email) {
+                    Swal.fire({
+                        title: 'Missing fields',
+                        text: 'Please enter your name and email to subscribe.',
+                        icon: 'warning',
+                        confirmButtonText: 'OK'
+                    });
+                    return;
+                }
+
+                Swal.fire({
+                    title: 'You are now subscribed!',
+                    text: 'Thanks for joining the Cromer Crabs mailing list.',
+                    icon: 'success',
+                    confirmButtonText: 'OK'
+                });
+            }
+
+            function toggleNavBar() {
+                document.getElementById("navLinks").classList.toggle("open");
+            }
+        </script>
+    </body>
+</html>

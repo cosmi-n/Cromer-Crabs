@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../styles/shopPageStyle.css">
+        <title>Cromer Crabs</title>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    </head>
+
+    <body>
+        <div id="navBar">
+            <h1>CROMER CRABS</h1>
+
+=            <button id="toggleNav" onclick="toggleNavBar()">&#9776;</button>
+
+            <div id="navLinks">
+                <a href="../../index.html" id="mainPageButton">Home page</a>
+                <a href="membersPage.html" id="membersPageButton">Members</a>
+                <a href="mailingProgramPage.html" id="mailButton">Mailing program</a>
+                <a href="contactUsPage.html" id="contactButton">Contact us</a>
+            </div>
+        </div>
+
+        <div id="searchDiv">
+            <form id="searchForm">
+                <input type="text" id="searchBar" placeholder="Search bar">
+            </form>
+            <div id="resultsBox"></div>
+        </div>
+
+        <h1 id="topTitle">We Wear It. So You Can Win In It.</h1>
+
+        <div id="teamPic_container">
+            <img id="team_pic" src="../images/team_Wearing_Merch.webp">
+        </div>
+
+        <div class="itemCards">
+            <div class="itemCard">
+                <img src="../images/shirt_design.webp" class="shirtImg"">
+                <div class="itemDescription">
+                    <h2>Cromer Crabs White Jersey</h2>
+                    <h5>Our white Cromer Crabs Circle jersey. Clean, bold, and ready for battle</h5>
+                </div>
+                <div class="sizeSelector">
+                    <button type="button" class="sizeXS_Button">XS</button>
+                    <button type="button" class="sizeS_Button">S</button>
+                    <button type="button" class="sizeM_Button">M</button>
+                    <button type="button" class="sizeL_Button">L</button>
+                    <button type="button" class="sizeXL_Button">XL</button>
+                </div>
+                <button type="button" class="addCartButton" onclick="addedAlert()">Add to cart</button>
+            </div>
+
+            <div class="itemCard">
+                <img src="../images/shirt_design1.webp" class="shirtImg">
+                <div class="itemDescription">
+                    <h2>Cromer Crabs Black Jersey</h2>
+                    <h5>Our signature black controller-crab tee. Minimal, bold, and unmistakably us.</h5>
+                </div>
+                <div class="sizeSelector">
+                    <button type="button" class="sizeXS_Button">XS</button>
+                    <button type="button" class="sizeS_Button">S</button>
+                    <button type="button" class="sizeM_Button">M</button>
+                    <button type="button" class="sizeL_Button">L</button>
+                    <button type="button" class="sizeXL_Button">XL</button>
+                </div>
+
+                <button type="button" class="addCartButton" onclick="addedAlert()">Add to cart</button>
+            </div>
+        </div>
+
+        <script>
+            const pages = [
+                {title: "Home Page", link: "../../index.html"},
+                {title: "Members", link: "membersPage.html"},
+                {title: "Mailing program", link: "mailingProgramPage.html"},
+                {title: "Contact us", link: "contactUsPage.html"}
+            ];
+
+            const input = document.getElementById("searchBar");
+            const resultsBox = document.getElementById("resultsBox");
+
+            input.addEventListener("input", function() {
+                let query = this.value.toLowerCase();
+                resultsBox.innerHTML = "";
+
+                if (query.length === 0) {
+                    resultsBox.style.display = "none";
+                    return;
+                }
+
+                const matches = pages.filter(page =>
+                    page.title.toLowerCase().includes(query)
+                );
+
+                if (matches.length === 0) {
+                    resultsBox.style.display = "none";
+                    return;
+                }
+
+                resultsBox.style.display = "block";
+
+                matches.forEach(match => {
+                    const div = document.createElement("div");
+                    div.classList.add("resultItem");
+                    div.textContent = match.title;
+                    div.onclick = () => { window.location.href = match.link; };
+                    resultsBox.appendChild(div);
+                });
+            });
+
+            function addedAlert() {
+                Swal.fire({
+                    title: 'Added to cart!',
+                    icon: 'success',
+                    confirmButtonText: 'OK'
+                });
+            }
+
+            function toggleNavBar() {
+                document.getElementById("navLinks").classList.toggle("open");
+            }
+        </script>
+    </body>
+</html>

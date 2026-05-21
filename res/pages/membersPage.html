@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../styles/membersPageStyle.css">
+        <title>Cromer Crabs</title>
+    </head>
+
+    <body>
+        <div id="navBar">
+            <h1>CROMER CRABS</h1>
+
+            <button id="toggleNav" onclick="toggleNavBar()">&#9776;</button>
+
+            <div id="navLinks">
+                <a href="../../index.html" id="mainPageButton">Home page</a>
+                <a href="shopPage.html" id="shopButton">Shop</a>
+                <a href="mailingProgramPage.html" id="mailButton">Mailing program</a>
+                <a href="contactUsPage.html" id="contactButton">Contact us</a>
+            </div>
+        </div>
+
+        <div id="searchDiv">
+            <form id="searchForm">
+                <input type="text" id="searchBar" placeholder="Search bar">
+            </form>
+            <div id="resultsBox"></div>
+        </div>
+
+        <div id="teamPic_container">
+            <img id="team_pic" src="../images/team_picture.webp">
+        </div>
+
+        <div class="memberCardsGrid">
+            <div class="memberCard">
+                <img src="../images/member1.webp" class="member1">
+                <div class="memberDescription">
+                    <h2>Kael Mercer</h2>
+                    <h2>21, Canada</h2>
+                    <h2>Achievements</h2>
+                </div>
+                <div class="socialMedia">
+                    <h2><a href="https://instagram.com">Instagram</a></h2>
+                    <h2><a href="https://tiktok.com">Tiktok</a></h2>
+                    <h2><a href="https://youtube.com">Youtube</a></h2>
+                    <h2><a href="https://twitch.tv">Twitch</a></h2>
+                </div>
+            </div>
+
+            <div class="memberCard">
+                <img src="../images/member2.webp" class="member2">
+                <div class="memberDescription">
+                    <h2>Oliver Hayes</h2>
+                    <h2>19, UK</h2>
+                    <h2>Achievements</h2>
+                </div>
+                <div class="socialMedia">
+                    <h2><a href="https://instagram.com">Instagram</a></h2>
+                    <h2><a href="https://tiktok.com">Tiktok</a></h2>
+                    <h2><a href="https://youtube.com">Youtube</a></h2>
+                    <h2><a href="https://twitch.tv">Twitch</a></h2>
+                </div>
+            </div>
+
+            <div class="memberCard">
+                <img src="../images/member3.webp" class="member3">
+                <div class="memberDescription">
+                    <h2>Luka Petrovic</h2>
+                    <h2>24, Serbia</h2>
+                    <h2>Achievements</h2>
+                </div>
+                <div class="socialMedia">
+                    <h2><a href="https://instagram.com">Instagram</a></h2>
+                    <h2><a href="https://tiktok.com">Tiktok</a></h2>
+                    <h2><a href="https://youtube.com">Youtube</a></h2>
+                    <h2><a href="https://twitch.tv">Twitch</a></h2>
+                </div>
+            </div>
+
+            <div class="memberCard">
+                <img src="../images/member4.webp" class="member4">
+                <div class="memberDescription">
+                    <h2>Mateo Alvarez</h2>
+                    <h2>23, Spain</h2>
+                    <h2>Achievements</h2>
+                </div>
+                <div class="socialMedia">
+                    <h2><a href="https://instagram.com">Instagram</a></h2>
+                    <h2><a href="https://tiktok.com">Tiktok</a></h2>
+                    <h2><a href="https://youtube.com">Youtube</a></h2>
+                    <h2><a href="https://twitch.tv">Twitch</a></h2>
+                </div>
+            </div>
+
+            <div class="memberCard">
+                <img src="../images/member5.webp" class="member5">
+                <div class="memberDescription">
+                    <h2>Elias Bergström</h2>
+                    <h2>26, Sweden</h2>
+                    <h2>Achievements</h2>
+                </div>
+                <div class="socialMedia">
+                    <h2><a href="https://instagram.com">Instagram</a></h2>
+                    <h2><a href="https://tiktok.com">Tiktok</a></h2>
+                    <h2><a href="https://youtube.com">Youtube</a></h2>
+                    <h2><a href="https://twitch.tv">Twitch</a></h2>
+                </div>
+            </div>
+
+            <div class="memberCard">
+                <img src="../images/member6.webp" class="member6">
+                <div class="memberDescription">
+                    <h2>Kane Walker</h2>
+                    <h2>20, UK</h2>
+                    <h2>Achievements</h2>
+                </div>
+                <div class="socialMedia">
+                    <h2><a href="https://instagram.com">Instagram</a></h2>
+                    <h2><a href="https://tiktok.com">Tiktok</a></h2>
+                    <h2><a href="https://youtube.com">Youtube</a></h2>
+                    <h2><a href="https://twitch.tv">Twitch</a></h2>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            document.getElementById('searchBar').style.height = "40px";
+            document.getElementById('searchBar').style.width = "400px";
+
+            const pages = [
+                {title: "Home Page", link: "../../index.html"},
+                {title: "Shop", link: "shopPage.html"},
+                {title: "Mailing program", link: "mailingProgramPage.html"},
+                {title: "Contact us", link: "contactUsPage.html"}
+            ];
+
+            const input = document.getElementById("searchBar");
+            const resultsBox = document.getElementById("resultsBox");
+
+            input.addEventListener("input", function() {
+                let query = this.value.toLowerCase();
+                resultsBox.innerHTML = "";
+
+                if (query.length === 0) {
+                    resultsBox.style.display = "none";
+                    return;
+                }
+
+                const matches = pages.filter(page =>
+                    page.title.toLowerCase().includes(query)
+                );
+
+                if (matches.length === 0) {
+                    resultsBox.style.display = "none";
+                    return;
+                }
+
+                resultsBox.style.display = "block";
+
+                matches.forEach(match => {
+                    const div = document.createElement("div");
+                    div.classList.add("resultItem");
+                    div.textContent = match.title;
+                    div.onclick = () => { window.location.href = match.link; };
+                    resultsBox.appendChild(div);
+                });
+            });
+
+            function toggleNavBar() {
+                document.getElementById("navLinks").classList.toggle("open");
+            }
+        </script>
+    </body>
+</html>

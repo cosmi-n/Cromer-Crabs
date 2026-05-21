@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="res/styles/homePageStyle.css">
+        <title>Cromer Crabs</title>
+    </head>
+    <body>
+        <div id="navBar">
+            <h1>CROMER CRABS</h1>
+
+            <button id="toggleNav" onclick="toggleNavBar()">&#9776;</button>
+
+            <div id="navLinks">
+                <a href="res/pages/membersPage.html" id="memberButton">Members</a>
+                <a href="res/pages/shopPage.html" id="shopButton">Shop</a>
+                <a href="res/pages/mailingProgramPage.html" id="mailButton">Mailing program</a>
+                <a href="res/pages/contactUsPage.html" id="contactButton">Contact us</a>
+            </div>
+        </div>
+
+        <div id="searchDiv">
+            <form id="searchForm">
+                <input type="text" id="searchBar" placeholder="Search bar">
+            </form>
+            <div id="resultsBox"></div>
+        </div>
+
+        <div class="teamDescription">
+            <p>Cromer Crabs is a competitive esports team focused on skill, teamwork and strong performance in every match. The team trains regularly to improve strategies, communication and individual ability so they can compete at a high level in tournaments. They are also committed to building a supportive fan community by sharing highlights, content and updates, giving supporters a chance to follow their journey and be part of the team's growth.</p>
+        </div>
+
+        <div class="mainPage">
+            <div class="memberBox">
+                <div class="imageWrapper">
+                    <img src="res/images/member1.webp" class="member1" alt="ShadowStrike">
+                    <div class="memberDesc">
+                        <h2>ShadowStrike</h2>
+                        <p>24, Romanian</p>
+                    </div>
+                </div>
+                <p>ShadowStrike leads the team with strong communication and fast reactions. He focuses on aggressive plays and helps guide team strategy during matches.</p>
+            </div>
+
+            <div class="memberBox">
+                <div class="imageWrapper">
+                    <img src="res/images/member2.webp" class="member2" alt="Nova">
+                    <div class="memberDesc">
+                        <h2>Nova</h2>
+                        <p>22, Romanian</p>
+                    </div>
+                </div>
+                <p>Nova supports the team by controlling gameplay and keeping communication clear. His work and awareness help the team stay organised and perform well.</p>
+            </div>
+
+            <div class="memberBox">
+                <div class="imageWrapper">
+                    <img src="res/images/member3.webp" class="member3" alt="Blitz">
+                    <div class="memberDesc">
+                        <h2>Blitz</h2>
+                        <p>22, Romanian</p>
+                    </div>
+                </div>
+                <p>Blitz specialises in long-range eliminations and precise aim. His accuracy allows him to secure key picks that give the team an advantage.</p>
+            </div>
+        </div>
+
+        <div id="highlights">
+            <h2>Recent highlight video</h2>
+            <div class="videoWrapper">
+                <iframe src="https://www.youtube.com/embed/MFU6AGjVFWs?si=Pz2gNaZT9-JfiTHk" title="Recent highlight video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+        </div>
+
+        <div class="shopping">
+            <div class="shopBox">
+                <img src="res/images/shirt_design.webp" class="shirtDes" alt="White jersey">
+                <h2>£15</h2>
+                <p>This white and black split jersey shows the team logo in a clean modern style.</p>
+                <input class="shopButton" type="button" value="Click for more info">
+            </div>
+
+            <div class="shopBox">
+                <img src="res/images/shirt_design1.webp" class="shirtDes" alt="Black jersey">
+                <h2>£15</h2>
+                <p>This black team jersey features the official Cromer Crabs logo with design.</p>
+                <input class="shopButton" type="button" value="Click for more info">
+            </div>
+        </div>
+
+        <script>
+            const pages = [
+                {title: "Members", link: "res/pages/membersPage.html"},
+                {title: "Shop", link: "res/pages/shopPage.html"},
+                {title: "Mailing program", link: "res/pages/mailingProgramPage.html"},
+                {title: "Contact us", link: "res/pages/contactUsPage.html"}
+            ];
+
+            const input = document.getElementById("searchBar");
+            const resultsBox = document.getElementById("resultsBox");
+
+            input.addEventListener("input", function() {
+                let query = this.value.toLowerCase();
+                resultsBox.innerHTML = "";
+
+                if (query.length === 0) {
+                    resultsBox.style.display = "none";
+                    return;
+                }
+
+                const matches = pages.filter(page =>
+                    page.title.toLowerCase().includes(query)
+                );
+
+                if (matches.length === 0) {
+                    resultsBox.style.display = "none";
+                    return;
+                }
+
+                resultsBox.style.display = "block";
+
+                matches.forEach(match => {
+                    const div = document.createElement("div");
+                    div.classList.add("resultItem");
+                    div.textContent = match.title;
+                    div.onclick = () => { window.location.href = match.link; };
+                    resultsBox.appendChild(div);
+                });
+            });
+
+            function toggleNavBar() {
+                const navLinks = document.getElementById("navLinks");
+                navLinks.classList.toggle("open");
+            }
+        </script>
+    </body>
+</html>

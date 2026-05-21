@@ -1,0 +1,308 @@
+@import url('https://fonts.googleapis.com/css2?family=Science+Gothic:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fjalla+One&family=Share+Tech&display=swap');
+
+* {
+    margin: 0;
+    font-family: "Science Gothic", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings: "slnt" 0, "wdth" 100, "CTRS" 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url("../images/background_img.webp");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+#navBar {
+    padding: 1.6%;
+    background-color: black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    position: relative;
+}
+
+#navBar > h1 {
+    font-family: "Share Tech", sans-serif;
+    font-weight: 400;
+    font-size: 50px;
+    font-style: normal;
+    color: aliceblue;
+}
+
+#navLinks > a {
+    background-color: aliceblue;
+    text-decoration: none;
+    color: black;
+    padding: 2px 6px;
+    margin-left: 10px;
+    margin-right: 3px;
+    border-radius: 3px;
+}
+
+#toggleNav {
+    display: none;
+    background: none;
+    border: none;
+    color: aliceblue;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+#searchDiv {
+    position: relative;
+    width: fit-content;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#searchForm {
+    margin-top: 4%;
+    display: block;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+
+#searchForm > input {
+    color: #333333;
+    border-color: black;
+    margin: auto;
+    text-align: center;
+    border-radius: 8px;
+    width: 400px;
+    max-width: 90vw;
+    height: 40px;
+}
+
+#resultsBox {
+    border-radius: 7px;
+    cursor: pointer;
+    display: none;
+    margin-bottom: 7px;
+    padding: 10px;
+    position: absolute;
+    top: 100%;
+    text-align: center;
+    background: white;
+    border-top: none;
+    width: 400px;
+    max-width: 90vw;
+}
+
+.resultItem {
+    padding: 6px 0;
+    color: black;
+}
+
+.resultItem:hover {
+    background-color: #eee;
+}
+
+.teamDescription {
+    max-width: 659px;
+    width: 90%;
+    background: linear-gradient(135deg, #101014, #3a3a45);
+    color: white;
+    border: 1px solid;
+    padding: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 6%;
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.mainPage {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin: 5% 5%;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.memberBox {
+    background: #101014;
+    padding: 1px;
+    width: 250px;
+    max-width: 320px;
+    position: relative;
+    text-align: center;
+    overflow: hidden;
+}
+
+.imageWrapper {
+    position: relative;
+    overflow: hidden;
+}
+
+.memberBox img {
+    display: block;
+    width: 100%;
+}
+
+.memberDesc {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: #a79a96;
+    text-align: center;
+    padding: 20px;
+    transform: translateY(100%);
+    transition: 0.4s;
+}
+
+.imageWrapper:hover > .memberDesc {
+    transform: translateY(0);
+}
+
+.memberBox p {
+    color: #c9c0bb;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+    margin: 0;
+    border: 1px solid black;
+    padding: 10px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#highlights {
+    background: linear-gradient(135deg, #101014, #3a3a45);
+    color: white;
+    padding: 15px 30px;
+    margin: 40px auto;
+    text-align: center;
+    max-width: 640px;
+    width: 90%;
+}
+
+#highlights > h2 {
+    margin-bottom: 3%;
+}
+
+.videoWrapper {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+}
+
+.videoWrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.shopping {
+    display: flex;
+    justify-content: space-between;
+    margin: 8% 10% 10%;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.shopBox {
+    width: 250px;
+    flex: 1 1 220px;
+    max-width: 320px;
+    position: relative;
+    text-align: center;
+    overflow: hidden;
+    background: linear-gradient(135deg, #101014, #3a3a45);
+}
+
+.shopBox img {
+    display: block;
+    width: 100%;
+}
+
+.shopBox h2 {
+    margin: 0;
+    color: #c9c0bb;
+    padding: 10px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.shopBox p {
+    margin: 0;
+    color: #bcbbc9;
+    padding: 10px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.shopButton {
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
+    width: 100%;
+    height: auto;
+    padding: 8px;
+    background: linear-gradient(135deg, #bcbbc9, #c9c0bb);
+    cursor: pointer;
+    opacity: 0.6;
+}
+
+@media only screen and (max-width: 700px) {
+    #toggleNav {
+        display: block;
+    }
+
+    #navLinks {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: black;
+        padding: 10px 0;
+    }
+
+    #navLinks.open {
+        display: flex;
+    }
+
+    #navLinks > a {
+        margin: 6px 16px;
+        display: inline-block;
+    }
+
+    #navBar > h1 {
+        font-size: 32px;
+    }
+
+    .mainPage {
+        justify-content: center;
+        margin: 5% 4%;
+    }
+
+    .shopping {
+        justify-content: center;
+        margin: 8% 4% 10%;
+    }
+
+    .teamDescription {
+        margin-top: 10%;
+    }
+}

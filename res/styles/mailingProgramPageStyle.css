@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Science+Gothic:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fjalla+One&family=Share+Tech&display=swap');
+
+* {
+    margin: 0;
+    font-family: "Science Gothic", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings: "slnt" 0, "wdth" 100, "CTRS" 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url("../images/background_img.webp");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+#navBar {
+    padding: 1.6%;
+    background-color: black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    position: relative;
+}
+
+#navBar > h1 {
+    font-family: "Share Tech", sans-serif;
+    font-weight: 400;
+    font-size: 50px;
+    font-style: normal;
+    color: aliceblue;
+}
+
+#navLinks > a {
+    background-color: aliceblue;
+    text-decoration: none;
+    color: black;
+    padding: 2px 6px;
+    margin-left: 10px;
+    margin-right: 3px;
+    border-radius: 3px;
+}
+
+#toggleNav {
+    display: none;
+    background: none;
+    border: none;
+    color: aliceblue;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+#mailingProgram_div {
+    margin-top: 7%;
+    display: flex;
+    justify-content: center;
+    padding: 0 16px;
+}
+
+#mailingProgramForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 460px;
+}
+
+#mailingProgramForm input {
+    border-radius: 10px;
+    margin-top: 10px;
+    width: 100%;
+    height: 40px;
+    text-align: center;
+}
+
+#mailingProgramForm button {
+    margin-top: 10%;
+    border-radius: 5px;
+    width: 100%;
+    max-width: 200px;
+    height: 45px;
+    border: 1px solid #fffffb;
+    box-shadow: 0 0 10px #8b5cf6;
+    color: aliceblue;
+    background: #1a1a2e;
+    cursor: pointer;
+}
+
+#mailingProgramForm button:hover {
+    background: #2a2a4e;
+}
+
+/* ── RESPONSIVE ── */
+@media only screen and (max-width: 700px) {
+    #toggleNav {
+        display: block;
+    }
+
+    #navLinks {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: black;
+        padding: 10px 0;
+    }
+
+    #navLinks.open {
+        display: flex;
+    }
+
+    #navLinks > a {
+        margin: 6px 16px;
+        display: inline-block;
+    }
+
+    #navBar > h1 {
+        font-size: 32px;
+    }
+
+    #mailingProgram_div {
+        margin-top: 14%;
+    }
+}
